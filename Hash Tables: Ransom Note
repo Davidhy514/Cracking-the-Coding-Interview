@@ -1,0 +1,21 @@
+def ransom_note(magazine, ransom):
+    hashTable = {};
+    for i in ransom:
+        hashTable[i] = 0
+    for i in ransom:
+        hashTable[i] += 1
+    for i in magazine:
+        if i in hashTable:
+            hashTable[i] -= 1
+    for i in hashTable:
+        if hashTable[i] > 0:
+            return 0
+    return 1    
+m, n = map(int, input().strip().split(' '))
+magazine = input().strip().split(' ')
+ransom = input().strip().split(' ')
+answer = ransom_note(magazine, ransom)
+if(answer):
+    print("Yes")
+else:
+    print("No")

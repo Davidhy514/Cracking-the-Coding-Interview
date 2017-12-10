@@ -1,27 +1,13 @@
 def number_needed(a, b):
     pass
-    hasha = {}
-    hashb = {}
+    ls = [0] * 26
     num = 0
     for c in a:
-        hasha[c] = 0
+        ls[ord(c) - ord('a')] += 1
     for c in b:
-        hashb[c] = 0
-    for c in a:
-        hasha[c] += 1
-    for c in b:
-        hashb[c] += 1
-    for key in hasha:
-        if key in hashb:
-            delta = abs(hasha[key] - hashb[key]) 
-            if delta != 0:
-                num += delta
-            hasha[key] = 0
-            hashb[key] = 0
-        else:
-            num += hasha[key]
-    for key in hashb:
-        num += hashb[key]
+        ls[ord(c) - ord('a')] -= 1
+    for i in ls:
+        num += abs(i)
         
     return (num)
     

@@ -1,0 +1,31 @@
+def number_needed(a, b):
+    pass
+    hasha = {}
+    hashb = {}
+    num = 0
+    for c in a:
+        hasha[c] = 0
+    for c in b:
+        hashb[c] = 0
+    for c in a:
+        hasha[c] += 1
+    for c in b:
+        hashb[c] += 1
+    for key in hasha:
+        if key in hashb:
+            delta = abs(hasha[key] - hashb[key]) 
+            if delta != 0:
+                num += delta
+            hasha[key] = 0
+            hashb[key] = 0
+        else:
+            num += hasha[key]
+    for key in hashb:
+        num += hashb[key]
+        
+    return (num)
+    
+a = input().strip()
+b = input().strip()
+
+print(number_needed(a, b))

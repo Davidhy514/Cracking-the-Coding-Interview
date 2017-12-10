@@ -1,0 +1,13 @@
+def array_left_rotation(a, n, k):
+    ls = [];
+    for i, val in enumerate(a):
+        if i - k < 0:
+            ls.insert(n - k + i, val)
+        else:
+            ls.insert(i - k, val)
+    return (ls)
+
+n, k = map(int, input().strip().split(' '))
+a = list(map(int, input().strip().split(' ')))
+answer = array_left_rotation(a, n, k);
+print(*answer, sep=' ')

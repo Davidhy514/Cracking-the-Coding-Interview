@@ -1,5 +1,4 @@
 def number_needed(a, b):
-    pass
     ls = [0] * 26
     num = 0
     for c in a:
